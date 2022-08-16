@@ -5,7 +5,7 @@ import java.util.Date;
 
 @Builder
 @Data
-class ConditionConfig implements Serializable {
+public class ConditionConfig implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -23,23 +23,23 @@ class ConditionConfig implements Serializable {
 
     private Integer group;
 
-    // private Operator conditionWithPrecedingGroup;
+    private Operator conditionWithPrecedingGroup;
 
     private Integer order;
 
-    // private Operator conditionWithPrecedingSibling;
+    private Operator conditionWithPrecedingSibling;
 
     private Integer conditionOperator;
 
     private Integer conditionKeyId;
 
-    // private FieldType conditionType;
+    private FieldType conditionType;
 
     private Integer conditionOnType;
 
     private String conditionValue;
 
-    // private FieldType conditionFieldType;
+    private FieldType conditionFieldType;
 
     private Integer conditionFieldId;
 
