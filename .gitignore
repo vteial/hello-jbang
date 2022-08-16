@@ -9,6 +9,7 @@ build/
 bin/
 
 # IntelliJ
+lib
 .idea
 *.ipr
 *.iml

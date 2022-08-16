@@ -12,6 +12,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import lombok.extern.slf4j.Slf4j;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 @Slf4j
 public class N2NJq {
@@ -29,9 +33,80 @@ public class N2NJq {
     void run() throws Exception {
         log.info("------------------------------------");
 
+        List<ConditionConfig> ccs = new ArrayList<>();
 
+        String jqQuery = this.computeJQ(ccs);
+        log.info("JQ Query : {}", jqQuery);
 
         log.info("------------------------------------");
     }
+
+    String computeJQ(List<ConditionConfig> ccs) {
+        StringBuilder jqQuery = new StringBuilder("jq '");
+
+        for(ConditionConfig cc : ccs) {
+            
+        }
+
+        jqQuery.append("'");
+        return jqQuery.toString();
+    }
 }
 
+@Builder
+@Data
+class ConditionConfig implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    private Integer id;
+
+    private String uuid;
+
+    private Integer status;
+
+    private String conditionConfigurationId;
+
+    private Integer ruleType;
+
+    private Integer ruleOrder;
+
+    private Integer group;
+
+    // private Operator conditionWithPrecedingGroup;
+
+    private Integer order;
+
+    // private Operator conditionWithPrecedingSibling;
+
+    private Integer conditionOperator;
+
+    private Integer conditionKeyId;
+
+    // private FieldType conditionType;
+
+    private Integer conditionOnType;
+
+    private String conditionValue;
+
+    // private FieldType conditionFieldType;
+
+    private Integer conditionFieldId;
+
+    private String conditionKeyStepId;
+
+    private String conditionFieldStepId;
+
+    private Integer createdBy;
+
+    private Date createdDate;
+
+    private Integer updatedBy;
+
+    private Date updatedDate;
+
+    public String toString() {
+        return ruleType + ":" + ruleOrder + ":" + group +  ":" + order;
+    }
+
+}
